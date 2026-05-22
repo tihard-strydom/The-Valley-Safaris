@@ -7,155 +7,170 @@
 
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<style>
-		
-		  body {font-family: 'Georgia', serif;
-		  margin: 0;
-		  padding: 0;
-		  background-color: #fdfcf9;
-		  color: #2f2f2f;}
-	  
-		  header {background-color: #2f4f2f;
-		  color: white;
-		  padding: 40px 20px;
-		  text-align: center;
-		  position: relative;}
 
-		  .sa-flag {position: absolute;
-		  top: 20px;
-		  right: 20px;
-		  width: 50px;}
+<style>
 
-		  .container { max-width: 1200px;
-		  margin: auto;
-		  padding: 30px 20px;}
 
-		h1, h2 {color: #2f4f2f;}
 
-		  .logos {display: flex;
-		  justify-content: space-around;
-		  align-items: center;
-		  flex-wrap: wrap;
-		  margin-top: 30px;}
+	 {box-sizing: border-box;}
 
-		  .logos img {max-height: 160px;
-		  margin: 10px;}
+	body 
+	{margin: 0;
+  	padding: 0;
+  	font-family: 'Georgia', serif;
+ 	 background-color: #f5ecdf;
+ 	 color: #2f2f2f;
+  	overflow-x: hidden;}
 
-		  .intro {text-align: center;
-		  padding: 30px 20px;}
 
-		  .intro p {font-size: 1.15rem;
-		  line-height: 1.6;}
+.menu-toggle {
+  font-size: 30px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+}
 
-		 .safari-photo {width: 100%;
-		  max-width: 900px;
-		  display: block;
-		  margin: 40px auto;
-		  border-radius: 10px;}
+.menu {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.95);
+  text-align: center;
+  z-index: 999;
+  padding: 20px 0;
+}
 
-		  .contact-location {display: flex;
-		  flex-wrap: wrap;
-		  justify-content: space-between;
-		  margin-top: 40px;}
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  font-size: 20px;
+  display: block;
+}
 
-		  .contact, .location {flex: 1 1 45%;
-		  margin: 20px;}
+.menu a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
 
-		  .contact h3, .location h3 {color: #2f4f2f;}
+/* HEADER */
 
-		  iframe {
-		  width: 100%;
-		  height: 300px;
-		  border: none;
-		  border-radius: 8px;}
+header {
+  background: linear-gradient(to right, #6b4a2f, #8b6a45, #5b3d28);
+  color: white;
+  padding: 40px 20px;
+  position: relative;
+}
 
-		  .book-button {
-		  display: block;
-		  width: 220px;
-		  margin: 40px auto;
-		  padding: 15px;
-		  background-color: #3b6e3b;
-		  color: white;
-		  font-weight: bold;
-		  font-size: 1.1rem;
-		  text-align: center;
-		  border-radius: 8px;
-		  text-decoration: none;}
+.sa-flag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+}
 
-		  .book-button:hover {
-		  background-color: #2f4f2f;}
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+  text-align: center;
+}
 
-		  form {margin-top: 20px;}
+.hero-box {
+  flex: 1;
+  min-width: 250px;
+}
 
-		  input, textarea {
-		  width: 100%;
-		  padding: 10px;
-		  margin-top: 10px;
-		  margin-bottom: 20px;
-		  border: 1px solid #ccc;
-		  border-radius: 5px;
-		  font-family: inherit;}
+.hero-box img {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
 
-		 .gallery {margin-top: 60px;}
+.hero-box h2 {
+  margin-top: 15px;
+  color: white;
+  font-size: 42px;
+  line-height: 1.1;
+}
 
-		 .gallery h2 {text-align: center;}
+.hero-text {
+  font-size: 24px;
+  color: #f5e6d3;
+  line-height: 1.5;
+  padding: 0 10px;
+}
 
-		  .gallery-grid {
-		  display: grid;
-		  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		  gap: 15px;
-		  margin-top: 30px;}
+.est-text {
+  margin-top: 20px;
+  font-size: 40px;
+  color: white;
+}
 
-		  .gallery-grid img {
-		  width: 100%;
-		  height: 200px;
-		  object-fit: cover;
-		  border-radius: 8px;}
+/* CONTAINER */
 
-		  footer {
-		  background-color: #2f4f2f;
-		  color: white;
-		  text-align: center;
-		  padding: 30px 20px;
-		  margin-top: 60px;}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
 
-		  @media(max-width: 768px) {.contact-location {flex-direction: column;}}
-			@media (max-width: 768px) {
+/* MOBILE */
 
-  h1 {
-    font-size: 32px;
+@media (max-width: 768px) {
+
+  header {
+    padding: 30px 15px;
   }
 
-  h2 {
-    font-size: 24px;
+  .hero-container {
+    flex-direction: column;
+    gap: 25px;
   }
 
-  p {
-    font-size: 16px;
-  }
-
-  .container {
-    padding: 20px 15px;
-  }
-
-  .team-container,
-  .gallery-container {
-    grid-template-columns: 1fr;
-    display: grid;
-  }
-
-  .package,
-  .review-entry,
-  .logbook-entry,
-  .team-member {
+  .hero-box {
     width: 100%;
-    margin: 10px 0;
-    box-sizing: border-box;
   }
 
-  img {
-    max-width: 100%;
-    height: auto;
+  .hero-box img {
+    max-width: 180px;
+  }
+
+  .hero-box h2 {
+    font-size: 28px;
+  }
+
+  .hero-text {
+    font-size: 20px;
+  }
+
+  .est-text {
+    font-size: 28px;
+  }
+
+  .sa-flag {
+    width: 35px;
+    top: 15px;
+    right: 15px;
+  }
+
+  .menu-toggle {
+    font-size: 28px;
+    top: 12px;
+    left: 12px;
   }
 
   .menu a {
@@ -163,104 +178,106 @@
     padding: 12px;
   }
 
-  iframe {
-    height: 250px;
-  }
-
-  .sa-flag {
-    width: 35px;
-    top: 10px;
-    right: 10px;
-  }
-
 }
-	</style>
-		</head>
-		
-		<style>
-    body {
-    margin: 0;
-    font-family: Arial, sans-serif;}
 
-    /* Posisionering van die hamburger ikoon */
-    .menu-toggle {
-    font-size: 30px;
-    color: black;
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;}
-
-    /* Die menu self */
-    .menu {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    padding: 30px 0;
-    text-align: center;
-    z-index: 999;}
-
-    .menu a {
-    color: white;
-    text-decoration: none;
-    padding: 15px 0;
-    font-size: 20px;
-    display: block;}
-
-  .menu a:hover {
-    background-color: rgba(255, 255, 255, 0.1);}
 </style>
 
-<!--  Hamburger ikoon -->
+</head>
+
+<body>
+
+<!-- MENU BUTTON -->
+
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-<!-- ✅Spyskaart wat oopmaak wanneer jy klik -->
+<!-- MENU -->
+
 <div class="menu" id="menu">
+
   <a href="index.html">Home</a>
-  <a href="packages.html">Packages & Bookings</a>
-  <a href="logbook.html">Hunters Logbook & Guest Reviews</a>
+  <a href="packages.html">Packages</a>
+  <a href="price_list.html">Price List</a>
+  <a href="logbook.html">Hunters Logbook</a>
   <a href="team.html">Meet the Team</a>
   <a href="faqs.html">FAQs</a>
   <a href="gallery.html">Gallery</a>
   <a href="contact.html">Contact</a>
+
 </div>
 
+<!-- SCRIPT -->
+
 <script>
-  function toggleMenu() {
-    var menu = document.getElementById("menu");
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";}
+
+function toggleMenu() {
+
+  var menu = document.getElementById("menu");
+
+  menu.style.display =
+  (menu.style.display === "flex")
+  ? "none"
+  : "flex";
+
+}
+
 </script>
 
-			<body>
-			
-			<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #f4f4f4; flex-wrap: wrap; text-align: center;">
-  <!-- Safari logo aan die linkerkant -->
-  <div style="flex: 1;">
-		<img src="kudu_logo2.jpg" alt="The Valley Safaris Logo" style="max-width: 120px; height: auto; display: block; margin: 0 auto;">
-		<h2 style="margin-top: 10px;">THE VALLEY SAFARI'S</h2>
+<!-- HEADER -->
+
+<header>
+
+<img class="sa-flag"
+src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg"
+alt="South African Flag">
+
+<div class="hero-container">
+
+  <!-- LEFT -->
+
+  <div class="hero-box">
+
+    <img src="lanyonvale_logo.jpeg"
+    alt="Lanyonvale Safaris Logo">
+
+    <h2>
+    LANYONVALE<br>SAFARIS
+    </h2>
+
   </div>
 
-<!-- Middel gedeelte met hoof opskrif en vlag -->
-  <div style="flex: 1;">
-		<img class="sa-flag" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" alt="South African Flag" style="width: 50px; margin-top: 10px;">
-    <p style="margin-top: 20px; font-style: italic;">
-	<h2 style="color: #8B4513;">Arrive as a Guest, Depart as Family.</h2></p>
+  <!-- MIDDLE -->
+
+  <div class="hero-box">
+
+    <div class="hero-text">
+
+      <h2 style="color:#f5e6d3; font-size: clamp(30px, 7vw, 58px);">
+
+      Experience the Untamed Spirit of the Karoo.
+
+      </h2>
+
+    </div>
+
   </div>
 
-<!-- Lodge logo aan die regterkant -->
-  <div style="flex: 1;">
-		<img src="lodge_logo2.jpg" alt="The Valley Lodge Logo" style="max-width: 120px; height: auto; display: block; margin: 0 auto;">
-		<h2 style="margin-top: 10px;">THE VALLEY LODGE</h2>
+  <!-- RIGHT -->
+
+  <div class="hero-box">
+
+    <img src="lanyonvale_logo.jpeg"
+    alt="Lanyonvale Safaris Logo">
+
+    <div class="est-text">
+    EST. 2025
+    </div>
+
   </div>
-  
+
+</div>
+
 </header>
+
 <hr style="border: 4px groove #367C2B; margin: 0;">
 
   <!-- INTRO -->
